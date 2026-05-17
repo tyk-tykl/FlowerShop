@@ -1,0 +1,18 @@
+body{
+    font-family: Arial, sans-serif;
+}
+
+.card{
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.navbar{
+    padding: 20px 0;
+}
+
+.bi-search,
+.bi-person-circle{
+    font-size: 22px;
+    cursor: pointer;
+}
