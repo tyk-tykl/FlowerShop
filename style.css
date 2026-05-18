@@ -1,6 +1,6 @@
 body{
-    font-family: Arial, sans-serif;
-    background: #EDF3D9FF;
+    font-family: Arial, sans-serif !important;
+    background-color: #EDF3D9 !important;
 }
 
 .carousel-img{
@@ -472,4 +472,24 @@ body{
 .card-text{
     color: gray;
     min-height: 50px;
+}
+
+.btn-primary{
+    background-color: #7A9E5E !important;
+    border-color: #7A9E5E !important;
+}
+
+.btn-primary:hover{
+    background-color: #68894f !important;
+    border-color: #68894f !important;
+}
+
+.btn-outline-primary{
+    color: #7A9E5E !important;
+    border-color: #7A9E5E !important;
+}
+
+.btn-outline-primary:hover{
+    background-color: #7A9E5E !important;
+    color: white !important;
 }
