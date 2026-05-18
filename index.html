@@ -29,15 +29,16 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                 </ul>
 
-                <button class="btn btn-outline-primary me-2">Login</button>
-                <a href="#" class="ms-3 text-dark">
+                <span id="nav-user-name" class="nav-user-name me-2" hidden></span>
+                <a id="nav-login-btn" href="login.html" class="btn btn-outline-primary me-2">Login</a>
+                <a href="#" class="ms-3 text-dark nav-icon-link">
                     <i class="bi bi-search"></i>
                 </a>
-                <a href="#" class="ms-3 text-dark">
+                <a id="nav-profile-link" href="login.html" class="ms-3 text-dark nav-icon-link" aria-label="Войти">
                     <i class="bi bi-person-circle"></i>
                 </a>
             </div>
@@ -45,106 +46,159 @@
     </nav>
 </header>
 
-<div id="carouselExample" class="carousel slide">
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+
     <div class="carousel-inner">
+
         <div class="carousel-item active">
-            <img src="img/slide1.jpg" class="d-block w-100" alt="Flower">
+            <img src="img/slide1.jpg"
+                 class="carousel-img d-block w-100"
+                 alt="Flower 1">
         </div>
+
+        <div class="carousel-item">
+            <img src="img/carusel1.jpg"
+                 class="carousel-img d-block w-100"
+                 alt="Flower 2">
+        </div>
+
+        <div class="carousel-item">
+            <img src="img/carusel2.jpg"
+                 class="carousel-img d-block w-100"
+                 alt="Flower 3">
+        </div>
+
     </div>
+
+    <button class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+
 </div>
 
-<section class="container my-5">
-    <h2 class="text-center">Lorem ipsum dolor</h2>
-
+<section id="bouquets" class="container my-5">
+    <h2 class="text-center">Наши букеты</h2>
     <div class="row g-4">
         <div class="col-md-4">
-            <div class="card">
-                <img src="img/flower1.jpg"
-                     class="card-img-top"
-                     style="height:250px; object-fit:cover;"
-                     alt="Flower">
+            <div class="card h-100 position-relative bouquet-card"
+                 data-id="flower1"
+                 data-title="All New Rush"
+                 data-price="$72"
+                 data-image="img/flower1.jpg">
+                <button type="button" class="favorite-btn" aria-label="В избранное">
+                    <i class="bi bi-heart"></i>
+                </button>
+                <img src="img/flower1.jpg" class="card-img-top bouquet-img" alt="Flower">
                 <div class="card-body">
                     <h5>All New Rush</h5>
                     <p>$72</p>
-                    <button class="btn btn-primary">Rent Now</button>
+                    <button type="button" class="btn btn-primary order-btn">Заказать</button>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card">
-                <img src="img/flower2.jpg"
-                     class="card-img-top"
-                     style="height:250px; object-fit:cover;"
-                     alt="Flower">
+            <div class="card h-100 position-relative bouquet-card"
+                 data-id="flower2"
+                 data-title="Spring Bloom"
+                 data-price="$65"
+                 data-image="img/flower2.jpg">
+                <button type="button" class="favorite-btn" aria-label="В избранное">
+                    <i class="bi bi-heart"></i>
+                </button>
+                <img src="img/flower2.jpg" class="card-img-top bouquet-img" alt="Flower">
                 <div class="card-body">
-                    <h5>All New Rush</h5>
-                    <p>$72</p>
-                    <button class="btn btn-primary">Rent Now</button>
+                    <h5>Spring Bloom</h5>
+                    <p>$65</p>
+                    <button type="button" class="btn btn-primary order-btn">Заказать</button>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card">
-                <img src="img/flower3.jpg"
-                     class="card-img-top"
-                     style="height:250px; object-fit:cover;"
-                     alt="Flower">
+            <div class="card h-100 position-relative bouquet-card"
+                 data-id="flower3"
+                 data-title="Rose Garden"
+                 data-price="$89"
+                 data-image="img/flower3.jpg">
+                <button type="button" class="favorite-btn" aria-label="В избранное">
+                    <i class="bi bi-heart"></i>
+                </button>
+                <img src="img/flower3.jpg" class="card-img-top bouquet-img" alt="Flower">
                 <div class="card-body">
-                    <h5>All New Rush</h5>
-                    <p>$72</p>
-                    <button class="btn btn-primary">Rent Now</button>
+                    <h5>Rose Garden</h5>
+                    <p>$89</p>
+                    <button type="button" class="btn btn-primary order-btn">Заказать</button>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card">
-                <img src="img/flower4.jpg"
-                     class="card-img-top"
-                     style="height:250px; object-fit:cover;"
-                     alt="Flower">
+            <div class="card h-100 position-relative bouquet-card"
+                 data-id="flower4"
+                 data-title="Lavender Dream"
+                 data-price="$58"
+                 data-image="img/flower4.jpg">
+                <button type="button" class="favorite-btn" aria-label="В избранное">
+                    <i class="bi bi-heart"></i>
+                </button>
+                <img src="img/flower4.jpg" class="card-img-top bouquet-img" alt="Flower">
                 <div class="card-body">
-                    <h5>All New Rush</h5>
-                    <p>$72</p>
-                    <button class="btn btn-primary">Rent Now</button>
+                    <h5>Lavender Dream</h5>
+                    <p>$58</p>
+                    <button type="button" class="btn btn-primary order-btn">Заказать</button>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card">
-                <img src="img/flower5.jpg"
-                     class="card-img-top"
-                     style="height:250px; object-fit:cover;"
-                     alt="Flower">
+            <div class="card h-100 position-relative bouquet-card"
+                 data-id="flower5"
+                 data-title="Sunset Mix"
+                 data-price="$76"
+                 data-image="img/flower5.jpg">
+                <button type="button" class="favorite-btn" aria-label="В избранное">
+                    <i class="bi bi-heart"></i>
+                </button>
+                <img src="img/flower5.jpg" class="card-img-top bouquet-img" alt="Flower">
                 <div class="card-body">
-                    <h5>All New Rush</h5>
-                    <p>$72</p>
-                    <button class="btn btn-primary">Rent Now</button>
+                    <h5>Sunset Mix</h5>
+                    <p>$76</p>
+                    <button type="button" class="btn btn-primary order-btn">Заказать</button>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card">
-                <img src="img/flower6.jpg"
-                     class="card-img-top"
-                     style="height:250px; object-fit:cover;"
-                     alt="Flower">
+            <div class="card h-100 position-relative bouquet-card"
+                 data-id="flower6"
+                 data-title="Classic White"
+                 data-price="$82"
+                 data-image="img/flower6.jpg">
+                <button type="button" class="favorite-btn" aria-label="В избранное">
+                    <i class="bi bi-heart"></i>
+                </button>
+                <img src="img/flower6.jpg" class="card-img-top bouquet-img" alt="Flower">
                 <div class="card-body">
-                    <h5>All New Rush</h5>
-                    <p>$72</p>
-                    <button class="btn btn-primary">Rent Now</button>
+                    <h5>Classic White</h5>
+                    <p>$82</p>
+                    <button type="button" class="btn btn-primary order-btn">Заказать</button>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="text-center mt-4">
-        <button class="btn btn-outline-primary px-5">
-            Show More
-        </button>
+        <button class="btn btn-outline-primary px-5">Показать ещё</button>
     </div>
 </section>
 
-<section class="container my-5">
+<section id="about" class="container my-5">
     <div class="row align-items-center">
 
         <div class="col-md-6">
@@ -154,15 +208,22 @@
         </div>
 
         <div class="col-md-6">
-            <h2>About Us</h2>
+            <h2>О нас</h2>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Accusamus ad asperiores at blanditiis doloremque,
-                ducimus harum ipsum laudantium molestiae.
+                Мы помогаем дарить эмоции и радость с помощью свежих цветов и стильных
+                букетов. Наша служба доставки работает быстро и надежно, чтобы каждый заказ
+                был доставлен вовремя и в идеальном состоянии.
+            </p>
+
+            <p>
+                В нашем ассортименте вы найдете букеты для любого повода: дня рождения,
+                праздника, важного события или просто чтобы порадовать близкого человека.
+                Мы заботимся о качестве каждого цветка и делаем процесс заказа максимально
+                удобным для наших клиентов.
             </p>
 
             <button class="btn btn-primary">
-                Read More
+                Подробнее
             </button>
         </div>
 
@@ -191,7 +252,9 @@
 <footer class="bg-light p-5 mt-5">
     <div class="container">
         <div class="row text-center">
-            <div class="col-md-4">Logo</div>
+            <img class="col-md-4" src="img/logo.jpg"
+                 alt="Logo"
+                 style="height: 100px;">
             <div class="col-md-4">About</div>
             <div class="col-md-4">Community</div>
         </div>
@@ -199,5 +262,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="auth.js"></script>
+<script src="shop.js"></script>
 </body>
 </html>
