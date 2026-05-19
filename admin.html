@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Панель администратора</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container py-5">
+    <a href="staff-login.html" class="auth-back">
+        ← Назад
+    </a>
+    <h1 class="text-center mb-5">Панель администратора</h1>
+
+    <div class="row g-4 mb-5">
+
+        <div class="col-md-4">
+            <div class="card p-4 text-center">
+                <h3 id="users-count">0</h3>
+                <p>Пользователей</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-4 text-center">
+                <h3 id="orders-count">0</h3>
+                <p>Заказов</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-4 text-center">
+                <h3 id="staff-count">0</h3>
+                <p>Сотрудников</p>
+            </div>
+        </div>
+
+    </div>
+
+    <h3>Назначение ролей</h3>
+
+    <div id="staff-list"></div>
+
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

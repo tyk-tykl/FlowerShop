@@ -132,6 +132,7 @@ function createOrder(bouquet, details) {
         deliveryDate: details.deliveryDate,
         deliveryTime: details.deliveryTime,
         comment: details.comment || '',
+        payment: details.payment,
     };
 
     orders.unshift(order);
@@ -294,7 +295,7 @@ function renderOrdersList(container) {
                 <h6>${order.title}</h6>
                 <p class="profile-order-meta">${order.price} · ${date}</p>
                 <p class="profile-order-id">Заказ #${order.id.slice(-6)}</p>
-                ${order.address ? `<p class="profile-order-address">${order.address}</p>` : ''}
+                ${order.payment ? `<p class="profile-order-address">Оплата: ${translatePayment(order.payment)}</p>` : ''}
                 ${
                     order.deliveryDate && order.deliveryTime
                         ? `<p class="profile-order-delivery">${formatDeliveryDate(order.deliveryDate)}, ${order.deliveryTime}</p>`
@@ -372,10 +373,12 @@ function initOrderPage() {
             phone: form.phone.value.trim(),
             deliveryDate: form.deliveryDate.value,
             deliveryTime: form.deliveryTime.value,
+            payment: form.payment.value,
             comment: form.comment.value.trim(),
         };
 
         createOrder(bouquet, details);
+        alert('Заказ успешно оформлен!');
         window.location.href = 'profile.html?tab=delivery';
     });
 }
@@ -419,4 +422,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('order-form')) {
         initOrderPage();
     }
+
+
 });
+
+function translatePayment(type){
+    if(type === "card") return "Банковская карта";
+    if(type === "cash") return "Наличными";
+    if(type === "online") return "Онлайн";
+    return type;
+}
